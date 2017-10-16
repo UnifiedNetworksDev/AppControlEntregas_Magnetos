@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControEntregas.Views.EntregasV"
+             xmlns:Model="clr-namespace:ControEntregas.Model;assembly=ControEntregas">
+
+    <!--<ContentPage.BindingContext>
+        <Model:ViewModelsEntregas/>
+    </ContentPage.BindingContext>-->
+
+    <ListView ItemsSource="{Binding EntregasList}" ItemTapped="ListView_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Vertical"
+                                 Padding="10">
+                        <Label Text="{Binding descripcion}"  LineBreakMode="NoWrap"
+                               Style="{DynamicResource ListItemTextStyle}"
+                               FontSize="20"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

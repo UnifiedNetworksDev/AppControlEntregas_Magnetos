@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControEntregas.Views.DescripcionEntregas" 
+             xmlns:Model="clr-namespace:ControEntregas.Model;assembly=ControEntregas">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Firmar" Clicked="Button_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ListView ItemsSource="{Binding EntregasList}" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Vertical"
+                                 Padding="12,6">
+                        <Label Text="{Binding descripcionProducto}"
+                               FontSize="18"/>
+                        <Label Text="{Binding cantidadString}"
+                               FontSize="14"
+                               Opacity="0.30"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

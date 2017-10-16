@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ControEntregas"
+             x:Class="ControEntregas.Menu" Title="Menu">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cerrar Sesión" Clicked="Logout_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="5" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+        <Image Source="entregasUser2.png" HorizontalOptions="Center">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Scan_Tapped"  />
+            </Image.GestureRecognizers>
+        </Image>
+        <Label HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"  Text="Escanear" HorizontalTextAlignment="Center"/>
+        <ActivityIndicator HorizontalOptions="Center" x:Name="actLoading" IsRunning="False" Color="#175081"/>
+        <Image Source="entregasOrden2.png" HorizontalOptions="Center">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"  />
+            </Image.GestureRecognizers>
+        </Image>
+        <Label FontAttributes="Bold" FontSize="20" TextColor="Black"  Text="Orden de Entrega" HorizontalTextAlignment="Center"/>
+        <Entry HorizontalOptions="Center" WidthRequest="100" Placeholder="# de Orden" TextColor="Black"  PlaceholderColor="Black" x:Name="txtNumOrden" HorizontalTextAlignment="Center"/>
+    </StackLayout>
+</ContentPage>
