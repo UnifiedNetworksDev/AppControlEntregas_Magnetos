@@ -22,7 +22,7 @@ namespace ControEntregas.Model
         {
             this.shipperID = shipperID;
             EntregasList = new List<EntregasM>();
-            //Task.Run(() => this.InitializeDataAsync()).Wait();
+            Task.Run(() => this.InitializeDataAsync()).Wait();
         }
 
         private async Task InitializeDataAsync()

@@ -61,7 +61,6 @@ namespace ControEntregas
                 {
                     actLoading.IsRunning = true;
 
-                    //await Task.Delay(2000);
                     EntregasModel entrega = new EntregasModel();
                     entrega.shipperID = txtNumOrden.Text.Trim();
                     entrega.token = this.cliente.token;
