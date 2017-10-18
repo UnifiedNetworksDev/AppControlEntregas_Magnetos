@@ -16,13 +16,13 @@ namespace ControEntregas.Model
     public class ViewModels
     {
         public List<EntregasM> EntregasList { get; set; }
-        private Int64 idOrdenEntrega;
+        private string shipperID;
 
-        public ViewModels(Int64 idOrdenEntrega)
+        public ViewModels(string shipperID)
         {
-            this.idOrdenEntrega = idOrdenEntrega;
+            this.shipperID = shipperID;
             EntregasList = new List<EntregasM>();
-            Task.Run(() => this.InitializeDataAsync()).Wait();
+            //Task.Run(() => this.InitializeDataAsync()).Wait();
         }
 
         private async Task InitializeDataAsync()
@@ -30,7 +30,7 @@ namespace ControEntregas.Model
             try
             {
                 var entregasService = new EntregasServices();
-                EntregasList = await entregasService.GetEntregasAsync(idOrdenEntrega);
+                EntregasList = await entregasService.GetEntregasAsync(shipperID);
             }
             catch (Exception ex)
             {

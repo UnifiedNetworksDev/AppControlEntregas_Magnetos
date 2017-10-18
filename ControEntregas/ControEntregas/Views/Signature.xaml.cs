@@ -21,7 +21,6 @@ namespace ControEntregas.Views
     {
         private HistorialEntregaModel info;
         public ObservableCollection<MediaFile> PhotosList { get; set; }
-        public string test { get; set; }
         public Signature(HistorialEntregaModel info)
         {
             this.info = info;

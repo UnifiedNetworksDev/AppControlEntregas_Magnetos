@@ -55,20 +55,30 @@ namespace ControEntregas
 
         private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
-            if (txtNumOrden.Text != null && txtNumOrden.Text != "")
+            try
             {
-                actLoading.IsRunning = true;
-                EntregasModel entrega = new EntregasModel();
-                entrega.idOrdenEntrega = Convert.ToInt64(txtNumOrden.Text.Trim());
-                txtNumOrden.Text = string.Empty;
-                entrega.token = this.cliente.token;
-                await Navigation.PushAsync(new DescripcionEntregas(entrega));
-                actLoading.IsRunning = false;
+                if (txtNumOrden.Text != null && txtNumOrden.Text != "")
+                {
+                    actLoading.IsRunning = true;
+
+                    //await Task.Delay(2000);
+                    EntregasModel entrega = new EntregasModel();
+                    entrega.shipperID = txtNumOrden.Text.Trim();
+                    entrega.token = this.cliente.token;
+                    await Navigation.PushAsync(new DescripcionEntregas(entrega));
+
+                    actLoading.IsRunning = false;
+                    txtNumOrden.Text = string.Empty;
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Favor de Introducir # de Orden", "cancel");
+                    txtNumOrden.Focus();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                await DisplayAlert("Error", "Favor de Introducir # de Orden", "cancel");
-                txtNumOrden.Focus();
+
             }
         }
 

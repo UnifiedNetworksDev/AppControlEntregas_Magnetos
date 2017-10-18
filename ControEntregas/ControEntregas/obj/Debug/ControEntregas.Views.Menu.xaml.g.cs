@@ -11,8 +11,8 @@
 namespace ControEntregas {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\Samuel\\Documents\\AppControlEntregas\\ControEntregas\\ControEntregas\\Views\\" +
-        "Menu.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\Samuel\\Documents\\AppControlEntregas_Magnetos\\ControEntregas\\ControEntreg" +
+        "as\\Views\\Menu.xaml")]
     public partial class Menu : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

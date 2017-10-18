@@ -17,6 +17,8 @@ namespace ControEntregas.Model
         public List<byte[]> fotos;
         [JsonIgnore]
         public Token token = new Token();
+        [JsonIgnore]
+        public String shipperID;
 
         public HistorialEntregaModel()
         {

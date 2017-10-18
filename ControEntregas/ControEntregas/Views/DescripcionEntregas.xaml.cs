@@ -28,7 +28,7 @@ namespace ControEntregas.Views
 
             try
             {
-                BindingContext = viewModel = new ViewModels(data.idOrdenEntrega);
+                BindingContext = viewModel = new ViewModels(data.shipperID);
             }
             catch (Exception ex)
             {
@@ -45,6 +45,7 @@ namespace ControEntregas.Views
             HistorialEntregaModel obj = new HistorialEntregaModel();
             obj.idOrdenEntrega = data.idOrdenEntrega;
             obj.token = data.token;
+            obj.shipperID = data.shipperID;
             await Navigation.PushAsync(new Signature(obj));
         }
     }

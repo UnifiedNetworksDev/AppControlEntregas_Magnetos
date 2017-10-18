@@ -25,7 +25,7 @@ namespace ControEntregas.Services
                     { new StringContent(json)}
                 };
 
-                var result = await httpClient.PostAsync(String.Format("{0}api/OrdenesEntrega/{1}/HistorialEntrega", APISettings.API_URL, data.idOrdenEntrega), content).ConfigureAwait(false);
+                var result = await httpClient.PostAsync(String.Format("{0}api/OrdenesEntrega/{1}/HistorialEntrega", APISettings.API_URL, data.shipperID), content).ConfigureAwait(false);
                 result.EnsureSuccessStatusCode();
             }
             catch (Exception ex)
